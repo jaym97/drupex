@@ -1,0 +1,29 @@
+@use '../../base-scss/base.styles.scss' as base;
+
+.hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    @include base.widthAndHeight(4rem, 2rem);
+    border: hidden;
+    background-color: base.$primary-color;
+    position: relative;
+
+    & .burger-line {
+        width: 2.5rem;
+        border: 2px solid base.$complementary-color;
+        border-radius: 20px;
+    }
+
+
+}
+
+.visually-hidden {
+    position: absolute;
+    @include base.widthAndHeight(1px, 1px);
+    overflow: hidden;
+    clip: rect(1px 1px 1px 1px); /* Support for IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap;
+}

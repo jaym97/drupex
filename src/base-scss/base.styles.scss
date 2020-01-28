@@ -1,0 +1,38 @@
+// Base Colors
+$primary-color: #285c00;
+$complementary-color: #e5446d;
+$on-primary-color: #fff;
+$body-text-color: #2a2b2a;
+
+// Base Font-Families
+$body-font-family: 'Roboto', sans-serif;
+$heading-font-family: 'Open Sans', sans-serif;
+
+// Base Font-Sizes
+$body-text-size: 16;
+$h1-text-size: 1.5;
+
+// Mixins
+@mixin widthAndHeight($width, $height){
+    width: $width;
+    height: $height;
+}
+
+@mixin fixedPosition($positionValue) {
+    position: $positionValue;
+    top: 0;
+    left: 0;
+}
+
+body {
+    font-family: $body-font-family;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $heading-font-family;
+}

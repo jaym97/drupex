@@ -1,0 +1,41 @@
+@use '../../base-scss/base.styles.scss' as base;
+
+.mobile-header {
+    display: flex;
+    @include base.widthAndHeight(100%, 10vh);
+    @include base.fixedPosition(fixed);
+    background-color: base.$primary-color;
+
+    @media screen and (min-width: 800px){
+        display: none;
+    }
+
+    & a {
+        @include base.widthAndHeight(3rem, 100%);
+        display: flex;
+        align-items: center;
+        margin-left: .5rem;
+    }
+
+    & svg {
+        @include base.widthAndHeight(auto, 90%);
+    }
+
+    & .spacer {
+        flex: 1;
+    }
+
+    & ul {
+        width: 38%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        list-style: none;
+
+        & .nav-links {
+            color: base.$on-primary-color;
+            font-size: 1.2em;
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,25 @@
+// Package import(s)
+import React from 'react'
+
+const LogoIcon = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+        <title>A clipboard and pill bottle logo. Click here to go the home page.</title>
+        <path d="M47 7v54H7a4 4 0 01-4-4V7a4 4 0 014-4h36a4 4 0 014 4z" data-original="#E6E7E8" fill="#e6e7e8"/>
+        <path data-original="#D8D7DA" fill="#d8d7da" d="M47 24v37H10l37-37z"/>
+        <path d="M61 32.67V59a2.006 2.006 0 01-2 2H35a2.006 2.006 0 01-2-2V32.67a1.969 1.969 0 01.4-1.2L36 28v-3h22v3l2.6 3.47a1.969 1.969 0 01.4 1.2zM10 9h4v6h-4z" data-original="#5AAAE7" data-old_color="#5AAAE7" fill="#285c00"/>
+        <path data-original="#3D9AE2" data-old_color="#3D9AE2" fill="#285c00" d="M9 21h6v25H9z"/>
+        <rect x="37" y="34" width="20" height="22" rx="2" data-original="#E6E7E8" fill="#e6e7e8"/>
+        <path data-original="#FF5023" data-old_color="#FF5023" fill="#e5446d" d="M53 43v4h-4v4h-4v-4h-4v-4h4v-4h4v4h4z"/>
+        <path d="M55 19h4a1 1 0 011 1v4a1 1 0 01-1 1H35a1 1 0 01-1-1v-4a1 1 0 011-1h20z" data-original="#787680" data-old_color="#787680" fill="#e5446d"/>
+        <path data-original="#FF5023" data-old_color="#FF5023" fill="#e5446d" d="M43 3v10l-3-3-3 3V3h6z"/>
+        <path data-original="#787680" data-old_color="#787680" fill="#e5446d" d="M11 50h2v5h-2z"/>
+        <path d="M19 31h-2V20h-3v-2h4a1 1 0 011 1z" data-original="#1A6FB0" data-old_color="#1A6FB0" fill="#e5446d"/>
+        <path data-original="#57565C" data-old_color="#57565C" fill="#285c00" d="M38 19h2v3h-2zM42 19h2v3h-2zM46 19h2v3h-2zM50 19h2v3h-2zM54 19h2v3h-2z"/>
+        <path data-original="#ACABB1" className="active-path" data-old_color="#ACABB1" fill="#2a2b2a" d="M20 36h8v2h-8zM20 40h8v2h-8zM20 44h8v2h-8zM20 48h8v2h-8z"/>
+        <path data-original="#898890" fill="#898890" d="M20 8h2v2h-2z"/>
+        <path data-original="#ACABB1" className="active-path" data-old_color="#ACABB1" fill="#2a2b2a" d="M24 8h8v2h-8zM20 12h12v2H20z"/>
+        <path data-original="#1E81CE" data-old_color="#1E81CE" fill="#e5446d" d="M15 46v1l-2 4h-2l-2-4v-1h6zM15 19v2H9v-6h6v4z"/>
+    </svg>
+)
+
+export default LogoIcon;
