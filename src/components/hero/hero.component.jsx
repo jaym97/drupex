@@ -4,8 +4,7 @@ import './hero.styles.scss';
 
 const Hero = ({ imageUrl, altDescription, page }) => (
     <div className="hero" id={page}>
-        <img src={imageUrl} alt={altDescription} />
-        <div className="overlay" />
+        <div className="hero-img" style={{backgroundImage: `linear-gradient(89deg, rgba(0,0,0,0.4), rgba(0,0,0,0.3)) url(${imageUrl})`}} title={altDescription} />
     </div>
 )
 
