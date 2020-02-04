@@ -1,19 +1,28 @@
 @use '../../base-scss/base.styles' as base;
 
 .custom-button {
-    min-width: 165px;
-    width: auto;
     height: 50px;
-    letter-spacing: 0.5px;
-    line-height: 50px;
-    padding: 0 35px 0 35px;
-    font-size: 15px;
-    background-color: base.$complementary-color;
+    // letter-spacing: 0.5px;
+    padding: 0 2.1em 0 2.1em;
+    font-size: 1.2em;
     color: #000;
     text-transform: uppercase;
-    font-family: 'Open Sans Condensed';
+    font-family: 'Open Sans Condensed', serif;
     font-weight: bolder;
     border: none;
     transition: background-color 350ms ease-out;
     cursor: pointer;
+    border-radius: 5px;
+}
+
+.primary {
+    background-color: base.$complementary-color;
+}
+
+.secondary {
+    background-color: base.$primary-color;
+}
+
+.transparent {
+    background-color: transparent;
 }

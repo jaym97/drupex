@@ -2,9 +2,13 @@ import React from 'react';
 
 import './hero.styles.scss';
 
-const Hero = ({ imageUrl, altDescription, page }) => (
-    <div className="hero" id={page}>
-        <div className="hero-img" style={{backgroundImage: `linear-gradient(89deg, rgba(0,0,0,0.4), rgba(0,0,0,0.3)) url(${imageUrl})`}} title={altDescription} />
+const Hero = ({ imageUrl, children, page }) => (
+    <div 
+        style={{backgroundImage: `linear-gradient(89deg, rgba(0,0,0, 0.5), rgba(0,0,0, 0.6)), url(${imageUrl})`}} 
+        className="hero" 
+        id={page}
+    >
+        {children}
     </div>
 )
 

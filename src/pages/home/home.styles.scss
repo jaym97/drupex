@@ -1,8 +1,28 @@
+@use '../../base-scss/base.styles.scss' as base;
+
 .home-page {
     margin-top: 10vh;
-    min-height: 60vh;
+    flex: 1;
 }
 
 #home {
     height: 60vh;
+
+    & .hero-text {
+        position: absolute;
+        top: 3em;
+        color: #fff;
+        left: 10%;
+        
+        text-shadow: 4px 4px 7px base.$body-text-color;
+        // transform: translateX(-40%);
+    }
+
+    & > .custom-button {
+        position: absolute;
+        bottom: 2em;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #141414;
+    }
 }

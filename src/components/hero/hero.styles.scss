@@ -1,13 +1,11 @@
 @use '../../base-scss/base.styles.scss' as base;
 
 .hero{
+    position: relative;
     @include base.widthAndHeight(100%, 100%);
     overflow-x: hidden;
-
-    & .hero-img {
-        @include base.widthAndHeight(100%, 100%);
-        background-position: center;
-        background-attachment: fixed;
-        background-size: cover;
-    }
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+   
 }
