@@ -21,7 +21,7 @@ const MobileHeader = () => (
         <div className="spacer" />
 
         <ul>
-            <li><Link className="nav-links" to="/sign-in">Sign In</Link></li>
+            <li><Link className="nav-links" to="/login">Sign In</Link></li>
             <li><HamburgerMenu /></li>
         </ul>
     </nav>
