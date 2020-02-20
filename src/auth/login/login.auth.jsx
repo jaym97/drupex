@@ -25,7 +25,8 @@ class LoginPage extends React.Component {
     render() {
         return (
             <div className="login">
-                <Hero imageUrl={imgPathContext('./login-hero.jpg')} page="login" />
+                {/* <Hero imageUrl={imgPathContext('./login-hero.png')} page="login" /> */}
+                <img id="login" src={imgPathContext('./login-hero.jpg')} />
                 <div>
                     <h1>Log in</h1>
                     <form >

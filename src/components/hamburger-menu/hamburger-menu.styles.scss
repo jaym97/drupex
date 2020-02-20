@@ -5,18 +5,16 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    @include base.widthAndHeight(4rem, 2rem);
+    @include base.widthAndHeight(3rem, 1.5rem);
     border: hidden;
-    background-color: base.$primary-color;
+    background-color: transparent;
     position: relative;
+    margin: auto 0.5em auto 0.2em;
 
     & .burger-line {
-        width: 2.5rem;
-        border: 2px solid base.$complementary-color;
-        border-radius: 20px;
+        width: 2rem;
+        border: 1px solid base.$primary-color;
     }
-
-
 }
 
 .visually-hidden {

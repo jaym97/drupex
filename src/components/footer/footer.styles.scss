@@ -1,3 +1,6 @@
+@use '../../base-scss/base.styles.scss' as base;
+
 footer {
-    height: 10vh;
+    height: 3em;
+    background-color: base.$body-text-color;
 }

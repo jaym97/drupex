@@ -1,8 +1,57 @@
 @use '../../base-scss/base.styles.scss' as base;
 
+$var: 1.3;
+
 .home-page {
-    margin-top: 10vh;
     flex: 1;
+
+    & h2 {
+        text-align: center;
+        padding: 0 0.5em;
+    }
+
+    & p {
+        font-size: calc(#{$var} * 1em);
+        padding: 0 0.2em;
+        text-align: center;
+        margin: 1.5em 0;
+    }
+
+    & .features-container {
+        margin: 3em 0;
+    }
+
+    & .features-wrapper {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1em;
+    }
+
+    & .feature {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+
+        & svg {
+            @include base.widthAndHeight(4rem, 4rem);
+        }
+
+        & span {
+            width: 50%;
+        }
+
+        & span {
+            font-size: 1.3em;
+        }
+    }
+
+    & .steps-container {
+        margin: 3em 0;
+
+        h2 {
+            text-align: center;
+        }
+    }
 }
 
 #home {
@@ -12,10 +61,8 @@
         position: absolute;
         top: 3em;
         color: #fff;
-        left: 10%;
-        
+        text-align: center;
         text-shadow: 4px 4px 7px base.$body-text-color;
-        // transform: translateX(-40%);
     }
 
     & > .custom-button {
@@ -23,6 +70,41 @@
         bottom: 2em;
         left: 50%;
         transform: translateX(-50%);
-        color: #141414;
+        color: white;
+    }
+}
+
+#steps {
+    clip-path: polygon(0 5%, 100% 0, 100% 95%, 0% 100%);
+    display: flex;
+    justify-content: center;
+    padding: 4em;
+
+    & .steps-wrapper {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-gap: 2em;
+        width: 100%;
+        
+        .step {
+            display: flex;
+            height: 18em;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            background-color: white;
+            border-radius: 5px;
+            padding: 1em 2em;
+            box-shadow: 0 0.2em 0.5em rgba(white, 0.5);
+
+            & svg {
+                height: 5rem;
+            }
+
+            & a {
+                color: white;
+                text-decoration: none;
+            }
+        }
     }
 }

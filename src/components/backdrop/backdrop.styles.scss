@@ -1,0 +1,8 @@
+@use '../../base-scss/base.styles.scss' as base;
+
+.backdrop {
+    @include base.widthAndHeight(100vw, 100vh);
+    background-color: rgba(black, 0.6);
+    @include base.fixedPosition(fixed);
+    z-index: 99;
+}

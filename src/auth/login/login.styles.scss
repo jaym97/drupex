@@ -6,9 +6,11 @@
 
     #login {
         height: 40vh;
-        background-size: contain;
-        background-repeat: no-repeat;
-        // background-position-x: -20em;
-        background-position-y: 3em;
+        background-size: cover;
+        // background-attachment: fixed;
+        // background-position: center;
+        // background-repeat: no-repeat;
+        // background-position-x: 20em;
+        // background-position-y: 3em;
     }
 }

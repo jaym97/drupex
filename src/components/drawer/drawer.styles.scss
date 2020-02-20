@@ -1,0 +1,61 @@
+@use '../../base-scss/base.styles.scss' as base;
+
+.drawer {
+    @include base.widthAndHeight(70vw, 100vh);
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+    padding: 1em 0.3em;
+    position: fixed;
+    left: 0;
+    background-color: base.$on-primary-color;
+    z-index: 100;
+    transform: translateX(-101%);
+    transition: transform 300ms ease-out;
+
+    & .logo-wrapper {
+        width: 50%;
+        margin: 0 auto 0.5em;
+
+        & img {
+            width: 100%;
+        }
+    }
+
+    & .main-menu-items {
+        border-bottom: 1px solid base.$primary-color;
+        margin-bottom: 1em;
+    }
+
+    & .main-menu-items,
+    & .other-menu-items {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        padding: 0.1em 0.5em 0.5em;
+
+        li {
+            padding: 0.5em 0;
+        }
+    }
+
+    & a {
+        display: flex;
+        align-items: center;
+        color: base.$primary-color;
+        text-decoration: none;
+    }
+
+    & svg {
+        width: 2rem;
+        margin-right: 1em;
+        fill: base.$primary-color;
+    }
+}
+
+.open {
+    transform: translateX(0);
+    box-shadow: 3px 0 15px 10px rgba(black, 0.5);
+}
