@@ -12,6 +12,7 @@ import Grid from '@material-ui/core/Grid';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
+import { signInWithGoogle } from '../../firebase/firebase.utils'
 
 function Copyright() {
   return (
@@ -108,6 +109,16 @@ export default function SignInSide() {
               className={classes.submit}
             >
               Sign In
+            </Button>
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              style={{backgroundColor: '#e5446d', color: 'white'}}
+              className={classes.submit}
+              onClick={signInWithGoogle}
+            >
+              Sign In With Google
             </Button>
             <Grid container>
               <Grid item xs>

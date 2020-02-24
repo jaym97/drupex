@@ -1,17 +1,62 @@
 @use '../../base-scss/base.styles.scss' as base;
 
 .header {
-    @include base.widthAndHeight(100%, 10vh);
-    @include base.fixedPosition(fixed);
+    @include base.widthAndHeight(100%, 7vh);
+    @include base.fixedPosition(sticky);
+    z-index: 1;
     display: flex;
     background-color: base.$on-primary-color;
+    box-shadow: 0 3px 5px 3px rgba(black, 0.4);
 
-    @media screen and (max-width: 799px){
+    @media (max-width: 799px){
         display: none;
+    }
+
+    .logo-text {
+        margin-left: 1em;
+    }
+
+    .spacer {
+        flex: 1;
+    }
+
+    & a {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: base.$primary-color;
+        font-size: 1.2em;
     }
 
     & svg {
         @include base.widthAndHeight(auto, 90%);
         margin: auto .2em;
+    }
+
+    & .nav-links {
+        width: 40%;
+        
+        & ul {
+            list-style: none;
+            display: flex;
+            height: 100%;
+            justify-content: space-between;
+            align-items: center;
+            transition: border-bottom 1600ms ease-in;
+
+            & li {
+                padding: 0.3em 0.7em;
+                cursor: pointer;
+
+                &:hover {
+                    border-bottom: 2px solid base.$complementary-color;
+                    
+                    & a {
+                        color: base.$complementary-color;
+                    }
+                }
+            }
+        }
     }
 }

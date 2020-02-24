@@ -44,7 +44,7 @@ class App extends React.Component {
 
     return (
       <div className="App">
-        {/* <Header /> */}
+        <Header />
         <MobileHeader hamburgerClickHandler={this.toggleDrawer} />
         <Drawer isOpen={drawerIsOpen} toggleDrawer={this.toggleDrawer} />
         {backdrop}
