@@ -1,6 +1,44 @@
 @use '../../base-scss/base.styles.scss' as base;
 
 footer {
-    height: 3em;
+    min-height: 20em;
     background-color: base.$body-text-color;
+    padding: 3em;
+
+    .content-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        // width: 100%;
+    }
+
+    .column {
+        width: 20%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h3,
+        a {
+            color: darken(base.$on-primary-color, 30%);
+        }
+
+        h3 {
+            margin-bottom: 1em;
+        }
+
+        a {
+            text-decoration: none;
+            margin-bottom: 0.5em;
+            transition: color 300ms ease-out;
+            
+            &:hover {
+                color: base.$on-primary-color;
+            }
+        }
+
+
+    }
+
+    
 }
