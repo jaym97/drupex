@@ -1,0 +1,39 @@
+@use '../../base-scss/base.styles.scss' as base;
+
+.dashboard-wrapper {
+    @include base.widthAndHeight(100%, 80vh);
+    display: flex;
+    flex-wrap: wrap;
+
+    .dashboard-panel {
+        @include base.widthAndHeight(25%, 100%);
+        min-width: 240px;
+        background-color: base.$primary-color;
+
+        & ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            padding: 1em 0;
+
+            & li {
+               padding: 1.5em;
+               transition: background-color 300ms ease-out;
+               
+               &:hover {
+                   background-color: base.$on-primary-color;
+                   cursor: pointer;
+
+                   a {
+                       color: base.$primary-color;
+                   }
+               }
+
+               & a {
+                   text-decoration: none;
+                   color: base.$on-primary-color;
+               }
+            }
+        }
+    }
+}

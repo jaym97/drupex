@@ -2,6 +2,8 @@
 import { BrowserRouter } from 'react-router-dom'
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import store from './redux/store';
 
 // Component import(s)
 import App from './App';
@@ -13,10 +15,13 @@ import './index.css';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
-    <BrowserRouter>
-        <App />
-    </BrowserRouter>, 
-    document.getElementById('drupex')
+    // Providing store (overall state) to the App component
+    <Provider store={store}>
+        {/* wrapping the App component to simulate normal web routing */}
+        <BrowserRouter>
+            <App />
+        </BrowserRouter>
+    </Provider>, document.getElementById('drupex')
 );
 
 // If you want your app to work offline and load faster, you can change

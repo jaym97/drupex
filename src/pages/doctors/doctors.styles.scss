@@ -2,27 +2,4 @@
 
 .doctors {
     flex: 1;
-
-    & .dashboard-wrapper {
-        background-color: base.$primary-color;
-        @include base.widthAndHeight(30%, 87vh);
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-
-            li {
-              padding: 1.5em 0.5em;
-              transition: background-color 300ms ease-out;
-              color: base.$on-primary-color;
-
-              &:hover {
-                  background-color: base.$on-primary-color;
-                  cursor: pointer;
-                  color: base.$primary-color;
-              }
-            }
-        }
-    }
 }
