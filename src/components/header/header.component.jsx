@@ -34,7 +34,7 @@ const Header = ({ currentUser }) => (
 
                 <li><Link to="/patients">Patients</Link></li>
 
-                <li><Link to="/how-it-works">How it Works</Link></li>
+                <li><Link to="/contact-us">Contact Us</Link></li>
                 
                 {/* checking currentUser state and populating the login button's text accordingly */}
                 {

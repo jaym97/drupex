@@ -11,6 +11,14 @@ $heading-font-family: 'Open Sans', sans-serif;
 // Base Font-Sizes
 $body-text-size: 16;
 $h1-text-size: 1.5;
+$min_screen-width: 20em;
+$max_screen-width: 75em;
+$min_font: 1em;
+$max_font: 1.3em;
+
+@function strip-unit($value) {
+    @return $value / ($value * 0 + 1);
+}
 
 // Mixins
 @mixin widthAndHeight($width, $height){
@@ -24,8 +32,29 @@ $h1-text-size: 1.5;
     left: 0;
 }
 
+@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+    $u1: unit($min-vw);
+    $u2: unit($max-vw);
+    $u3: unit($min-font-size);
+    $u4: unit($max-font-size);
+  
+    @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+        & {
+            font-size: $min-font-size;
+            @media screen and (min-width: $min-vw) {
+                font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+            }
+            
+            @media screen and (min-width: $max-vw) {
+                font-size: $max-font-size;
+            }
+        }
+    }
+  }
+
 body {
     font-family: $body-font-family;
+    @include fluid-type($min_screen-width, $max_screen-width, $min_font, $max_font);
 }
 
 h1,
