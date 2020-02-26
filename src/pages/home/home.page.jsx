@@ -1,6 +1,8 @@
 // Package import(s)
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { createStructuredSelector } from 'reselect'
 
 // Component import(s)
 import CustomButton from '../../components/custom-button/custom-button.component'
@@ -9,23 +11,25 @@ import Hero from '../../components/hero/hero.component'
 // Icon imports
 import AllergiesIcon from '../../assets/svg-components/allergies.icon'
 import DrugIcon from '../../assets/svg-components/drug.icon'
+import MedicalHistoryIcon from '../../assets/svg-components/medical-history.icon'
 import PatientIcon from '../../assets/svg-components/patient.icon'
 import UserIcon from '../../assets/svg-components/user.icon'
 import VitalSignsIcon from '../../assets/svg-components/vital-signs.icon'
 
+import { selectCurrentUser } from '../../redux/user/user.selectors';
+
 // Style import(s)
 import './home.styles.scss'
-import MedicalHistoryIcon from '../../assets/svg-components/medical-history.icon'
 
 const imagePath = require.context('../../assets/hero-images/')
 
-const HomePage = () => (
+const HomePage = ({ currentUser }) => (
     <div className="home-page">
         <Hero imageUrl={imagePath("./home-hero.jpg")} page="home">
             <div className="hero-text">
                 <h1>Minimize prescription errors</h1>
             </div>
-            <CustomButton primary>Get Started</CustomButton>
+            <CustomButton primary><Link to={currentUser ? currentUser.role == 'patient' ? '/patients' : '/doctors' : '/login'}>Get Started</Link></CustomButton>
         </Hero>
 
         <main>
@@ -92,4 +96,8 @@ const HomePage = () => (
     </div>
 )
 
-export default HomePage;
+const mapStateToProps = createStructuredSelector({
+  currentUser: selectCurrentUser
+});
+
+export default connect(mapStateToProps)(HomePage);

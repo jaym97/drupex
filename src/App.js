@@ -99,8 +99,8 @@ class App extends React.Component {
             render={() => this.props.currentUser ? (<Redirect to='/' />) : (<SignUpPage />)} 
           />
 
-          <Route path="/doctors" component={DoctorsPage} />
-          <Route path="/patients" component={PatientsPage} />
+          <Route path="/doctors" render={() =>this.props.currentUser ? this.props.currentUser.role == 'patient' ? <Redirect to='/patients' />: (<DoctorsPage />) : (<SignInSide />)} />
+          <Route path="/patients" render={() =>this.props.currentUser ? this.props.currentUser.role == 'doctor' ? <Redirect to='/doctors' />: (<PatientsPage />) : (<SignInSide />)} />
           <Route path="/prescription-requests" component={PrescriptionRequests} />
         </Switch>
   
