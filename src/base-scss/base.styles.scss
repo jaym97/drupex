@@ -15,6 +15,8 @@ $min_screen-width: 20em;
 $max_screen-width: 75em;
 $min_font: 1em;
 $max_font: 1.3em;
+$mod_1: 1.2; // mobile
+$mod_2: 1.3; // desktop
 
 @function strip-unit($value) {
     @return $value / ($value * 0 + 1);
@@ -50,7 +52,20 @@ $max_font: 1.3em;
             }
         }
     }
-  }
+}
+
+h1 {  
+  font-size: $mod_1*$mod_1*$mod_1*$mod_1 *1rem; 
+  @include fluid-type($min_screen-width, $max_screen-width, $mod_1*$mod_1*$mod_1 *$min_font, $mod_2*$mod_2*$mod_2 *$min_font);
+}
+h2 {  
+  font-size: $mod_1*$mod_1*$mod_1 *1rem; 
+  @include fluid-type($min_screen-width, $max_screen-width, $mod_1*$mod_1*$mod_1 *$min_font, $mod_2*$mod_2*$mod_2 *$min_font);
+}
+h3 { 
+  font-size: $mod_1*$mod_1 *1rem;
+  @include fluid-type($min_screen-width, $max_screen-width, $mod_1*$mod_1 *$min_font, $mod_2*$mod_2 *$min_font);
+}
 
 body {
     font-family: $body-font-family;
