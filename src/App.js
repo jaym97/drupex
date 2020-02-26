@@ -15,6 +15,7 @@ import MobileHeader from './components/mobile-header/mobile-header.component'
 import DoctorsPage from './pages/doctors/doctors.page'
 import HomePage from './pages/home/home.page'
 import PatientsPage from './pages/patients/patients.page'
+import PrescriptionRequests from './pages/prescription-requests/prescription-requests.page'
 import SignInSide from './auth/login/login.page'
 import SignUpPage from './auth/sign-up/sign-up.auth'
 
@@ -100,6 +101,7 @@ class App extends React.Component {
 
           <Route path="/doctors" component={DoctorsPage} />
           <Route path="/patients" component={PatientsPage} />
+          <Route path="/prescription-requests" component={PrescriptionRequests} />
         </Switch>
   
         <Footer />

@@ -121,27 +121,26 @@ export default function SignUp() {
         </Typography>
         <form className={classes.form}>
           <Grid container spacing={2}>
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12}>
               <TextField
-                name="firstName"
-                value={firstname}
                 variant="outlined"
-                required
                 fullWidth
-                id="firstName"
+                required
+                id="firstname"
                 label="First Name"
-                autoFocus
+                name="firstname"
+                value={firstname}
                 onChange={handleInputChange}
               />
             </Grid>
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12}>
               <TextField
                 variant="outlined"
-                required
                 fullWidth
-                id="lastName"
+                required
+                id="lastname"
                 label="Last Name"
-                name="lastName"
+                name="lastname"
                 value={lastname}
                 onChange={handleInputChange}
               />

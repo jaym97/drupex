@@ -13,8 +13,9 @@ class Dashboard extends Component {
                    <nav>
                        <ul>
                            <li><Link to="/prescription-requests">Prescription Requests</Link></li>
-                           <li><Link to="/prescription-requests">Prescription Requests</Link></li>
-                           <li><Link to="/prescription-requests">Prescription Requests</Link></li>
+                           <li><Link to="/edit-profile">Edit Profile</Link></li>
+                           <li><Link to="/manage-account">Manage Account</Link></li>
+                           <li><Link to="/manage-account">Handled Requests</Link></li>
                        </ul>
                    </nav>
                </div>

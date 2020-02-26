@@ -1,6 +1,9 @@
 // Package import(s)
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
+import { auth } from '../../firebase/firebase.utils';
 
 // Component imports
 
@@ -8,10 +11,13 @@ import { Link } from 'react-router-dom'
 // Icon import(s)
 import LogoIcon from '../../assets/svg-components/logo.icon'
 
+// Selector import(s)
+import { selectCurrentUser } from '../../redux/user/user.selectors';
+
 // Style import(s)
 import './header.styles.scss'
 
-const Header = () => (
+const Header = ({ currentUser }) => (
     <header className="header">
         <Link to="/">
             <LogoIcon />
@@ -22,18 +28,28 @@ const Header = () => (
 
         <nav className="nav-links">
             <ul>
-                <li>
-                    <Link to="/doctors">Doctors</Link>
-                </li>
+                <li><Link to="/">Home</Link></li>
 
                 <li><Link to="/doctors">Doctors</Link></li>
 
-                <li><Link to="/doctors">Doctors</Link></li>
+                <li><Link to="/patients">Patients</Link></li>
 
-                <li><Link to="/doctors">Doctors</Link></li>
+                <li><Link to="/how-it-works">How it Works</Link></li>
+                
+                {/* checking currentUser state and populating the login button's text accordingly */}
+                {
+                    currentUser ?
+                    <li><Link to="/" onClick={() => auth.signOut()}>Sign Out</Link></li> :
+                    <li><Link to="/login">Login</Link></li>
+                }
             </ul>
         </nav>
     </header>
 )
 
-export default Header;
+// updating state using a user and cart selector
+const mapStateToProps = createStructuredSelector({
+    currentUser: selectCurrentUser,
+});
+
+export default connect(mapStateToProps)(Header);
