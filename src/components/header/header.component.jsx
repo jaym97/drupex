@@ -21,7 +21,7 @@ const Header = ({ currentUser }) => (
     <header className="header">
         <Link to="/">
             <LogoIcon />
-            <span className="logo-text">Drupex</span>
+            <span id="logo-text">Drupex</span>
         </Link>
 
         <div className="spacer" />

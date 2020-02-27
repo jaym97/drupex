@@ -30,9 +30,13 @@ const HomePage = ({ currentUser }) => (
     <div className="home-page">
         <Hero imageUrl={imagePath("./home-hero.jpg")} page="home">
             <div className="hero-text">
-                <h1>Minimize prescription errors</h1>
+                <h1>Drupex helps doctors minimize prescription errors</h1>
             </div>
-            <CustomButton primary><Link to={currentUser ? currentUser.role == 'patient' ? '/patients' : '/doctors' : '/login'}>Get Started</Link></CustomButton>
+
+            <div className="hero-controls">
+                <CustomButton primary><Link to={currentUser ? currentUser.role == 'patient' ? '/patients' : '/doctors' : '/login'}>Get Started</Link></CustomButton>
+                <CustomButton transparent><Link to="/signup">Sign Up</Link></CustomButton>
+            </div>
         </Hero>
 
         <main>

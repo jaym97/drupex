@@ -3,7 +3,6 @@
 .custom-button {
     height: 50px;
     letter-spacing: 0.5px;
-    font-size: 0.7em;
     padding: 0 2.1em 0 2.1em;
     color: #000;
     text-transform: uppercase;
@@ -13,6 +12,10 @@
     transition: background-color 350ms ease-out;
     cursor: pointer;
     border-radius: 5px;
+
+    @media (min-width: 800px){
+        font-size: 0.7em;
+    }
 }
 
 .primary {
@@ -25,4 +28,10 @@
 
 .transparent {
     background-color: transparent;
+    border: 1px solid base.$complementary-color;
+    transition: background-color 300ms ease-out;
+
+    &:hover {
+        background-color: base.$complementary-color;
+    }
 }

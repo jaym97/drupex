@@ -32,6 +32,16 @@
         @media (min-width: 800px){
             margin: 3em 0 0;
             padding: 0 1em 3em;
+
+            h2 {
+                width: 70%;
+                margin: 0 auto;
+            }
+
+            h2,
+            p {
+                margin-bottom: 1.2em;
+            }
         }
     }
 
@@ -42,6 +52,7 @@
         
         @media (min-width: 800px){
             padding: 0 8em;
+            margin-top: 1em;
         }
     }
 
@@ -57,7 +68,10 @@
 
         & span {
             width: 50%;
-            font-size: 0.8em;
+            
+            @media (min-width: 800px){
+                font-size: 0.8em;
+            }
         }
     }
 
@@ -67,35 +81,52 @@
 }
 
 #home {
-    height: 60vh;
+    height: 93vh;
+
+    @media (min-height: 720px){
+        height: 60vh;
+    }
 
     & .hero-text {
         position: absolute;
-        top: 3em;
+        top: 30%;
         color: #fff;
         text-align: center;
         text-shadow: 4px 4px 7px base.$body-text-color;
-    }
 
-    & > .custom-button {
-        position: absolute;
-        bottom: 2em;
-        left: 50%;
-        transform: translateX(-50%);
-        
-        a {
-            color: white;
-            text-decoration: none;
+        @media (min-height: 720px){
+            top: 20%;
         }
     }
 
-    @media (min-width: 800px){
-        height: 80vh;
+    .hero-controls {
+        position: absolute;
+        bottom: 20%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 40%;
+        display: flex;
+        justify-content: space-between;
 
+        .custom-button {
+            a {
+                color: white;
+                text-decoration: none;
+            }
+        }
+
+        @media (max-width: 799px){
+            width: 80%;
+        }
+    }
+
+    
+
+    @media (min-width: 800px){
         .hero-text {
             top: 50%;
             left: 50%;
-            transform: translateX(-50%);
+            transform: translate(-50%, -100%);
         }
     }
 }
@@ -132,8 +163,11 @@
             box-shadow: 0 0.2em 0.5em rgba(white, 0.5);
 
             span {
-                font-size: 0.8em;
                 text-align: center;
+
+                @media (min-width: 800px){
+                    font-size: 0.8em;
+                }
             }
 
             & svg {
