@@ -1,7 +1,7 @@
 @use '../../base-scss/base.styles.scss' as base;
 
 .dashboard-wrapper {
-    @include base.widthAndHeight(100%, 80vh);
+    @include base.widthAndHeight(100%, 93vh);
     display: flex;
     flex-wrap: wrap;
 
@@ -17,7 +17,7 @@
             padding: 1em 0;
 
             & li {
-               padding: 1.5em;
+               padding: 1em 2em;
                transition: background-color 300ms ease-out;
                
                &:hover {

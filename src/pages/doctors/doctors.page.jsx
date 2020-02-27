@@ -1,8 +1,6 @@
 import React from 'react'
-import { Link, Switch, Route } from 'react-router-dom'
 
-import Backdrop from '../../components/backdrop/backdrop.component'
-import Dashboard from '../../components/dashboard/dashboard.component'
+import Dashboard from '../../components/dashboard/dashboard.plugin'
 
 import './doctors.styles.scss'
 

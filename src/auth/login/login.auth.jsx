@@ -4,6 +4,8 @@ import Grid from '@material-ui/core/Grid';
 import Link from '@material-ui/core/Link';
 import TextField from '@material-ui/core/TextField';
 
+import { auth, signInWithGoogle } from '../../firebase/firebase.utils'
+
 
 import './login.styles.scss'
 
@@ -11,7 +13,7 @@ import './login.styles.scss'
 class LoginPage extends React.Component {
 
     state = {
-        username: '',
+        email: '',
         password: ''
     }
 
@@ -21,21 +23,36 @@ class LoginPage extends React.Component {
         this.setState({ [name]: value });
     }
 
+    handleSubmit = async event => {
+        event.preventDefault();
+
+        // awaiting user authentication and catching any errors if call fails
+        try {
+            await auth.signInWithEmailAndPassword(this.state.email, this.state.password);
+            this.setState({ email: '', password: '' });
+        } catch (error){
+            console.log("user failed to sign in", error.message);
+        }
+
+    }
+
 
     render() {
         return (
             <div className="login">
                 <div className="login-wrapper">
                     <h1>Log in</h1>
-                    <form >
+                    <form onSubmit={this.handleSubmit}>
                         <Grid item xs={12}>
                             <TextField
                                 variant="outlined"
                                 fullWidth
                                 required
-                                id="username"
-                                label="Username"
-                                name="username"
+                                id="email"
+                                label="Email"
+                                name="email"
+                                value={this.state.email}
+                                onChange={this.handleChange}
                             />
                         </Grid>
                         <Grid item xs={12}>
@@ -47,6 +64,8 @@ class LoginPage extends React.Component {
                                 label="password"
                                 name="password"
                                 type="password"
+                                value={this.state.password}
+                                onChange={this.handleChange}
                             />
                         </Grid>
 
