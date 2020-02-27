@@ -27,7 +27,10 @@
         align-items: center;
         text-decoration: none;
         color: base.$primary-color;
-        font-size: 0.8em;
+        
+        @media (min-width: 800px){
+            font-size: 0.8em;
+        }
     }
 
     & svg {

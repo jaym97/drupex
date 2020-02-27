@@ -1,16 +1,36 @@
-.login {
-    width: 100%;
-    margin-top: 10vh;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));;
+@use '../../base-scss/base.styles.scss' as base;
 
-    #login {
-        height: 40vh;
-        background-size: cover;
-        // background-attachment: fixed;
-        // background-position: center;
-        // background-repeat: no-repeat;
-        // background-position-x: 20em;
-        // background-position-y: 3em;
+.login {
+    height: 93vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: base.$primary-color;
+
+    .login-wrapper {
+        @include base.widthAndHeight(90%, 60%);
+        background-color: darken(white, 3%);
+        border-radius: 3px;
+        box-shadow: 1px 2px 3px 3px rgba(black, 0.3);
+        padding: 1em 2em;
+
+        @media (min-width: 800px){
+            width: 45%;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 2em;
+            @media (min-width: 800px){
+                font-size: 1.5em;
+            }
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 70%;
+        }
     }
 }

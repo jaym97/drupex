@@ -1,12 +1,12 @@
 import React from 'react'
+import Button from '@material-ui/core/Button';
+import Grid from '@material-ui/core/Grid';
+import Link from '@material-ui/core/Link';
+import TextField from '@material-ui/core/TextField';
 
-import CustomButton from '../../components/custom-button/custom-button.component'
-import FormInput from '../../components/form-input/form-input.component'
 
 import './login.styles.scss'
-import Hero from '../../components/hero/hero.component'
 
-const imgPathContext = require.context('../../assets/hero-images/')
 
 class LoginPage extends React.Component {
 
@@ -25,29 +25,47 @@ class LoginPage extends React.Component {
     render() {
         return (
             <div className="login">
-                {/* <Hero imageUrl={imgPathContext('./login-hero.png')} page="login" /> */}
-                <img id="login" src={imgPathContext('./login-hero.jpg')} />
-                <div>
+                <div className="login-wrapper">
                     <h1>Log in</h1>
                     <form >
-                        <FormInput
-                            name="username"
-                            label="username or email"
-                            type="email"
-                            value={this.state.username}
-                            handleChange={this.handleChange}
-                            required
-                        />
-                        <FormInput
-                            name="password"
-                            label="password"
-                            type="password"
-                            value={this.state.password}
-                            handleChange={this.handleChange}
-                            required
-                        />
+                        <Grid item xs={12}>
+                            <TextField
+                                variant="outlined"
+                                fullWidth
+                                required
+                                id="username"
+                                label="Username"
+                                name="username"
+                            />
+                        </Grid>
+                        <Grid item xs={12}>
+                            <TextField
+                                variant="outlined"
+                                required
+                                fullWidth
+                                id="password"
+                                label="password"
+                                name="password"
+                                type="password"
+                            />
+                        </Grid>
 
-                        <CustomButton primary type="submit">Log In</CustomButton>
+                        <Button
+                            type="submit"
+                            variant="contained"
+                            color="primary"
+                            style={{backgroundColor: '#e5446d', width: '50%', marginLeft: 'auto'}}
+                        >
+                            Login
+                        </Button>
+
+                        <Grid container justify="flex-end">
+                            <Grid item>
+                                <Link href="/login" variant="body2">
+                                    Don't have an account? Sign up
+                                </Link>
+                            </Grid>
+                        </Grid>
                     </form>
                 </div>
             </div>

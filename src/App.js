@@ -14,9 +14,9 @@ import MobileHeader from './components/mobile-header/mobile-header.component'
 // Page import(s)
 import DoctorsPage from './pages/doctors/doctors.page'
 import HomePage from './pages/home/home.page'
+import LoginPage from './auth/login/login.auth'
 import PatientsPage from './pages/patients/patients.page'
 import PrescriptionRequests from './pages/prescription-requests/prescription-requests.page'
-import SignInSide from './auth/login/login.page'
 import SignUpPage from './auth/sign-up/sign-up.auth'
 
 // Firebase method import
@@ -91,7 +91,7 @@ class App extends React.Component {
           <Route 
             exact 
             path='/login' 
-            render={() => this.props.currentUser ? (<Redirect to='/' />) : (<SignInSide />)} 
+            render={() => this.props.currentUser ? (<Redirect to='/' />) : (<LoginPage />)} 
           />
           <Route 
             exact 
@@ -99,8 +99,8 @@ class App extends React.Component {
             render={() => this.props.currentUser ? (<Redirect to='/' />) : (<SignUpPage />)} 
           />
 
-          <Route path="/doctors" render={() =>this.props.currentUser ? this.props.currentUser.role == 'patient' ? <Redirect to='/patients' />: (<DoctorsPage />) : (<SignInSide />)} />
-          <Route path="/patients" render={() =>this.props.currentUser ? this.props.currentUser.role == 'doctor' ? <Redirect to='/doctors' />: (<PatientsPage />) : (<SignInSide />)} />
+          <Route path="/doctors" render={() =>this.props.currentUser ? this.props.currentUser.role == 'patient' ? <Redirect to='/patients' />: (<DoctorsPage />) : (<LoginPage />)} />
+          <Route path="/patients" render={() =>this.props.currentUser ? this.props.currentUser.role == 'doctor' ? <Redirect to='/doctors' />: (<PatientsPage />) : (<LoginPage />)} />
           <Route path="/prescription-requests" component={PrescriptionRequests} />
         </Switch>
   
