@@ -4,6 +4,8 @@ import Grid from '@material-ui/core/Grid';
 import Link from '@material-ui/core/Link';
 import TextField from '@material-ui/core/TextField';
 
+import FormInput from '../../components/form-input/form-input.component'
+
 import { auth, signInWithGoogle } from '../../firebase/firebase.utils'
 
 
@@ -36,38 +38,30 @@ class LoginPage extends React.Component {
 
     }
 
-
     render() {
         return (
             <div className="login">
                 <div className="login-wrapper">
                     <h1>Log in</h1>
                     <form onSubmit={this.handleSubmit}>
-                        <Grid item xs={12}>
-                            <TextField
-                                variant="outlined"
-                                fullWidth
-                                required
-                                id="email"
-                                label="Email"
-                                name="email"
-                                value={this.state.email}
-                                onChange={this.handleChange}
-                            />
-                        </Grid>
-                        <Grid item xs={12}>
-                            <TextField
-                                variant="outlined"
-                                required
-                                fullWidth
-                                id="password"
-                                label="password"
-                                name="password"
-                                type="password"
-                                value={this.state.password}
-                                onChange={this.handleChange}
-                            />
-                        </Grid>
+                        <FormInput
+                            label="Email"
+                            id="email"
+                            name="email"
+                            value={this.state.email}
+                            handleChange={this.handleChange}
+                            type="email"
+                            required
+                        />
+                        <FormInput
+                            label="Password"
+                            id="password"
+                            name="password"
+                            value={this.state.password}
+                            handleChange={this.handleChange}
+                            type="password"
+                            required
+                        />
 
                         <Button
                             type="submit"

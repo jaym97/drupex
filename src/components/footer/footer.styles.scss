@@ -1,14 +1,14 @@
 @use '../../base-scss/base.styles.scss' as base;
 
 footer {
-    min-height: 10em;
+    min-height: 7em;
     background-color: base.$body-text-color;
     padding: 1.5em 1em;
     display: flex;
     flex-direction: column;
 
     @media (min-width: 800px){
-        padding: 3em;
+        padding: 2em;
     }
 
     a {
