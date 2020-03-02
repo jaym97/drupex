@@ -20,6 +20,11 @@
 
 .primary {
     background-color: base.$complementary-color;
+    transition: background-color 300ms ease-out;
+
+    &:hover {
+        background-color: darken(base.$complementary-color, 5%);
+    }
 }
 
 .secondary {

@@ -1,3 +1,25 @@
+@use '../../base-scss/base.styles.scss' as base;
+
 .patients {
     flex: 1;
+
+    #patients {
+        height: 93vh;
+
+        .controls {
+            width: 50%;
+            display: flex;
+            justify-content: space-between;
+            position: absolute;
+            left: 50%;
+            bottom: 20%;
+            z-index: 1;
+            transform: translateX(-50%);
+
+            a {
+                color: base.$on-primary-color;
+                text-decoration: none;
+            }
+        }
+    }
 }

@@ -1,0 +1,57 @@
+@use '../../base-scss/base.styles.scss' as base;
+
+.patient-prescriptions {
+    flex: 1;
+
+    #patient-prescriptions {
+        height: 93vh;
+
+        table.minimalistBlack {
+            font-family: "Comic Sans MS", cursive, sans-serif;
+            border: 3px solid #285C00;
+            width: 80%;
+            text-align: center;
+            margin: 10% auto;
+            border-collapse: collapse;
+            background-color: #fff;
+            border-radius: 3px;
+            box-shadow: 1px 2px 12px 15px rgba(black, 0.4);
+        }
+    
+        table.minimalistBlack td, 
+        table.minimalistBlack th {
+            border: 1px solid #285C00;
+            padding: 8px 4px;
+        }
+    
+        table.minimalistBlack tbody td {
+            font-size: 13px;
+        }
+    
+        table.minimalistBlack thead {
+            background: #285C00;
+            background: -moz-linear-gradient(top, #5e8540 0%, #3d6c19 66%, #285C00 100%);
+            background: -webkit-linear-gradient(top, #5e8540 0%, #3d6c19 66%, #285C00 100%);
+            background: linear-gradient(to bottom, #5e8540 0%, #3d6c19 66%, #285C00 100%);
+            border-bottom: 3px solid #285C00;
+        }
+    
+        table.minimalistBlack thead th {
+            font-size: 15px;
+            font-weight: bold;
+            color: #FFFFFF;
+            text-align: center;
+        }
+    
+        table.minimalistBlack tfoot {
+            font-size: 14px;
+            font-weight: bold;
+            color: #000000;
+            border-top: 3px solid #000000;
+        }
+        
+        table.minimalistBlack tfoot td {
+            font-size: 14px;
+        }
+    }
+}
