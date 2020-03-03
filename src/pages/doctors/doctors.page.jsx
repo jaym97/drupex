@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Dashboard from '../../components/dashboard/dashboard.plugin'
+import Dashboard from '../../components/dashboard/dashboard.component'
 
 import './doctors.styles.scss'
 

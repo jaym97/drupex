@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 
+import CustomButton from '../../components/custom-button/custom-button.component';
+import Hero from '../../components/hero/hero.component'
 import Modal from '../../components/modal/modal.component'
 
 import './prescription-requests.styles.scss'
-import CustomButton from '../../components/custom-button/custom-button.component';
 
 class PrescriptionRequests extends Component {
     state = { modalIsOpen: false }
@@ -19,63 +20,78 @@ class PrescriptionRequests extends Component {
 
 
     render() {
-    return (
-    <div className="prescription-requests">
-        <table className="minimalistBlack">
+        const imgPathContext = require.context('../../assets/hero-images/')
+
+        return (
+        <div className="prescription-requests">
+            <Hero imageUrl={imgPathContext('./login-hero.jpg')} page="prescription-requests">
+            <table className="minimalistBlack">
             <thead>
                 <tr>
-                    <th>head1</th>
-                    <th>head2</th>
-                    <th>head3</th>
-                    <th>head4</th>
+                    <th>Name</th>
+                    <th>Suspected Ailment</th>
+                    <th>Symptoms</th>
+                    <th>Handle Request</th>
                 </tr>
             </thead>
 
             <tbody>
                 <tr>
-                    <td>cell1_1</td>
-                    <td>cell2_1</td>
-                    <td>cell3_1</td>
+                    <td>Agnes Amaka</td>
+                    <td>Covid-19</td>
+                    <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam facere dolorem eius harum unde veniam aspernatur.</td>
                     <td>
                         <Modal isOpen={this.state.modalIsOpen} handleClose={this.hideModal}>
                             <p>Modal</p>
                             <p>Data</p>
                         </Modal>
-                        <CustomButton primary onClick={this.showModal}>Handle Request</CustomButton>
+                        <CustomButton primary onClick={this.showModal}>View</CustomButton>
                     </td>
                 </tr>
 
                 <tr>
-                    <td>cell1_2</td>
-                    <td>cell2_2</td>
-                    <td>cell3_2</td>
-                    <td>cell4_2</td>
+                    <td>Agnes Amaka</td>
+                    <td>Covid-19</td>
+                    <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam facere dolorem eius harum unde veniam aspernatur.</td>
+                    <td>
+                        <Modal isOpen={this.state.modalIsOpen} handleClose={this.hideModal}>
+                            <p>Modal</p>
+                            <p>Data</p>
+                        </Modal>
+                        <CustomButton primary onClick={this.showModal}>View</CustomButton>
+                    </td>
                 </tr>
 
                 <tr>
-                    <td>cell1_3</td>
-                    <td>cell2_3</td>
-                    <td>cell3_3</td>
-                    <td>cell4_3</td>
+                    <td>Agnes Amaka</td>
+                    <td>Covid-19</td>
+                    <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam facere dolorem eius harum unde veniam aspernatur.</td>
+                    <td>
+                        <Modal isOpen={this.state.modalIsOpen} handleClose={this.hideModal}>
+                            <p>Modal</p>
+                            <p>Data</p>
+                        </Modal>
+                        <CustomButton primary onClick={this.showModal}>View</CustomButton>
+                    </td>
                 </tr>
 
                 <tr>
-                    <td>cell1_4</td>
-                    <td>cell2_4</td>
-                    <td>cell3_4</td>
-                    <td>cell4_4</td>
-                </tr>
-
-                <tr>
-                    <td>cell1_5</td>
-                    <td>cell2_5</td>
-                    <td>cell3_5</td>
-                    <td>cell4_5</td>
+                    <td>Agnes Amaka</td>
+                    <td>Covid-19</td>
+                    <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam facere dolorem eius harum unde veniam aspernatur.</td>
+                    <td>
+                        <Modal isOpen={this.state.modalIsOpen} handleClose={this.hideModal}>
+                            <p>Modal</p>
+                            <p>Data</p>
+                        </Modal>
+                        <CustomButton primary onClick={this.showModal}>View</CustomButton>
+                    </td>
                 </tr>
             </tbody>
         </table>
-    </div>
-  )
+            </Hero>
+        </div>
+    )
   }
 }
 

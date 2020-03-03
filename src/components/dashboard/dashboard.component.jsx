@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
-import DashboardDetails from '../dashboard-details/dashboard-details.component'
-
 import './dashboard.styles.scss'
 
 class Dashboard extends Component {
@@ -20,7 +18,7 @@ class Dashboard extends Component {
                    </nav>
                </div>
                <div className="dashboard-content">
-                   <DashboardDetails />
+                   {/* <DashboardDetails /> */}
                </div>
             </div>
         )
