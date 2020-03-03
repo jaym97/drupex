@@ -51,14 +51,14 @@ const Drawer = ({ isOpen, toggleDrawer }) => {
                 </li>
 
                 <li onClick={toggleDrawer}>
-                    <Link to="/login">
-                        <WritePrescriptionIcon id="Click here to find out how our website works" />
+                    <Link to="/prescription-requests">
+                        <WritePrescriptionIcon id="Click here to make pending prescriptions" />
                         <span>Make a prescription</span>
                     </Link>
                 </li>
                 <li onClick={toggleDrawer}>
-                    <Link to="/login">
-                        <ReceiveFileIcon id="Click here to find out how our website works" />
+                    <Link to="/prescription-request">
+                        <ReceiveFileIcon id="Click here to request a prescription" />
                         <span>Get a precsription</span>
                     </Link>
                 </li>

@@ -20,6 +20,7 @@
 
 .primary {
     background-color: base.$complementary-color;
+    color: base.$on-primary-color;
     transition: background-color 300ms ease-out;
 
     &:hover {

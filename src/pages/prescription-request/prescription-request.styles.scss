@@ -1,3 +1,28 @@
+@use '../../base-scss/base.styles.scss' as base;
+
 .prescription-request {
     flex: 1;
+    background-color: base.$primary-color;
+
+    & main {
+        width: 60%;
+        max-width: 1023px;
+        margin: 4% auto;
+        padding: 0.5em 1em;
+        background-color: base.$on-primary-color;
+        border-radius: 3px;
+        box-shadow: 1px 1px 5px 5px rgba(black, 0.3);
+
+        form {
+            min-height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+
+            .custom-button {
+                width: 40%;
+                margin: 0 auto;
+            }
+        }
+    }
 }
