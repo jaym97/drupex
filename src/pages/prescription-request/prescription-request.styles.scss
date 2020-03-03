@@ -8,16 +8,21 @@
         width: 60%;
         max-width: 1023px;
         margin: 4% auto;
-        padding: 0.5em 1em;
+        padding: 0.5em 3em;
         background-color: base.$on-primary-color;
         border-radius: 3px;
         box-shadow: 1px 1px 5px 5px rgba(black, 0.3);
+
+        h1 {
+            font-size: 1.3em;
+            text-align: center;
+        }
 
         form {
             min-height: 500px;
             display: flex;
             flex-direction: column;
-            justify-content: space-around;
+            justify-content: space-evenly;
 
             .custom-button {
                 width: 40%;

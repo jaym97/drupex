@@ -1,4 +1,6 @@
 import React from 'react'
+import DeleteForeverRoundedIcon from '@material-ui/icons/DeleteForeverRounded';
+import EditRoundedIcon from '@material-ui/icons/EditRounded';
 
 import Hero from '../../components/hero/hero.component'
 
@@ -12,47 +14,26 @@ const PatientPrescriptions = () => (
             <table className="minimalistBlack">
                 <thead>
                     <tr>
-                        <th>head1</th>
-                        <th>head2</th>
-                        <th>head3</th>
-                        <th>head4</th>
+                        <th>Suspected Ailment</th>
+                        <th>Symptoms and Remarks</th>
+                        <th>Edit Request</th>
+                        <th>Delete Request</th>
                     </tr>
                 </thead>
 
                 <tbody>
                     <tr>
-                        <td>cell1_1</td>
-                        <td>cell2_1</td>
-                        <td>cell3_1</td>
-                        <td>cell3_1</td>
+                        <td>Corona virus</td>
+                        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore inventore repudiandae aspernatur velit sit recusandae nobis! Autem temporibus assumenda quas nihil, earum molestias fugit accusantium enim doloribus dignissimos delectus sapiente!</td>
+                        <td><EditRoundedIcon /></td>
+                        <td><DeleteForeverRoundedIcon /></td>
                     </tr>
 
                     <tr>
-                        <td>cell1_2</td>
-                        <td>cell2_2</td>
-                        <td>cell3_2</td>
-                        <td>cell4_2</td>
-                    </tr>
-
-                    <tr>
-                        <td>cell1_3</td>
-                        <td>cell2_3</td>
-                        <td>cell3_3</td>
-                        <td>cell4_3</td>
-                    </tr>
-
-                    <tr>
-                        <td>cell1_4</td>
-                        <td>cell2_4</td>
-                        <td>cell3_4</td>
-                        <td>cell4_4</td>
-                    </tr>
-
-                    <tr>
-                        <td>cell1_5</td>
-                        <td>cell2_5</td>
-                        <td>cell3_5</td>
-                        <td>cell4_5</td>
+                        <td>Sars</td>
+                        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta mollitia velit quasi ut pariatur vero, aspernatur nemo, maxime voluptatem sunt adipisci aliquam ad sint voluptatum deserunt debitis molestias distinctio culpa.</td>
+                        <td><EditRoundedIcon /></td>
+                        <td><DeleteForeverRoundedIcon /></td>
                     </tr>
                 </tbody>
             </table>
