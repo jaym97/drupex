@@ -30,9 +30,16 @@ const Header = ({ currentUser }) => (
             <ul>
                 <li><Link to="/">Home</Link></li>
 
-                <li><Link to="/doctors">Doctors</Link></li>
-
-                <li><Link to="/patients">Patients</Link></li>
+                {
+                    currentUser ?
+                    currentUser.role === 'doctor' ? 
+                    <li><Link to="/doctors">Doctors</Link></li> : 
+                    <li><Link to="/patients">Patients</Link></li> :
+                    <>
+                        <li><Link to="/doctors">Doctors</Link></li>
+                        <li><Link to="/patients">Patients</Link></li>
+                    </>
+                }
 
                 <li><Link to="/contact-us">Contact Us</Link></li>
                 
