@@ -40,6 +40,10 @@
 
     & .nav-links {
         width: 40%;
+
+        @media (max-width: 900px) and (min-width: 800px){
+            width: 50%;
+        }
         
         & ul {
             list-style: none;
