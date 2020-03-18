@@ -16,6 +16,7 @@ const Drawer = ({ isOpen, toggleDrawer }) => {
     return (
         <nav className={`drawer ${isOpen ? 'open' : ''}`}>    
             <div className="logo-wrapper">
+                <button aria-label="Close site's navigation drawer" onClick={toggleDrawer}>&times;</button>
                 <img src={localImagePath('./logo.png')} alt="Drupex" />
             </div>
 

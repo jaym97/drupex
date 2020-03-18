@@ -10,7 +10,7 @@ const HamburgerMenu = ({ clickHandler }) => (
         <span className="burger-line" />
         <span className="burger-line" />
 
-        <span className="visually-hidden">Hamburger menu. Click here to navigate the site</span>
+        <span className="visually-hidden">Open the site's navigation links.</span>
     </button>
 )
 
