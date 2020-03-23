@@ -16,28 +16,38 @@
     @media (min-width: 800px){
         font-size: 0.7em;
     }
-}
 
-.primary {
-    background-color: base.$complementary-color;
-    color: base.$on-primary-color;
-    transition: background-color 300ms ease-out;
-
-    &:hover {
-        background-color: darken(base.$complementary-color, 5%);
-    }
-}
-
-.secondary {
-    background-color: base.$primary-color;
-}
-
-.transparent {
-    background-color: transparent;
-    border: 1px solid base.$complementary-color;
-    transition: background-color 300ms ease-out;
-
-    &:hover {
+    &.primary {
         background-color: base.$complementary-color;
+        color: base.$on-primary-color;
+        transition: background-color 300ms ease-out;
+    
+        &:hover {
+            background-color: darken(base.$complementary-color, 5%);
+        }
+    }
+    
+    &.secondary {
+        background-color: base.$primary-color;
+    }
+    
+    &.transparent {
+        background-color: transparent;
+        border: 1px solid base.$complementary-color;
+        transition: background-color 300ms ease-out;
+    
+        &:hover {
+            background-color: base.$complementary-color;
+        }
+    }
+    
+    &.google-sign-in {
+        background-color: #4285f4;
+        color: white;
+    
+        &:hover {
+            background-color: #357ae8;
+            border: none;
+        }
     }
 }

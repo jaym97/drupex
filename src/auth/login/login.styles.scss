@@ -37,6 +37,12 @@
                 padding: 0.5em 0;
                 width: 100%;
             }
+
+            & .login-controls {
+                width: 90%;
+                display: flex;
+                justify-content: space-evenly;
+            }
         }
     }
 }

@@ -1,9 +1,8 @@
 import React from 'react'
-import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import Link from '@material-ui/core/Link';
-import TextField from '@material-ui/core/TextField';
 
+import CustomButton from '../../components/custom-button/custom-button.component'
 import FormInput from '../../components/form-input/form-input.component'
 
 import { auth, signInWithGoogle } from '../../firebase/firebase.utils'
@@ -63,19 +62,15 @@ class LoginPage extends React.Component {
                             required
                         />
 
-                        <Button
-                            type="submit"
-                            variant="contained"
-                            color="primary"
-                            style={{backgroundColor: '#e5446d', width: '50%', marginLeft: 'auto'}}
-                        >
-                            Login
-                        </Button>
+                        <div className="login-controls">
+                            <CustomButton primary>login</CustomButton>
+                            <CustomButton onClick={signInWithGoogle} googleSignIn>Sign in with Google</CustomButton>
+                        </div>
 
                         <Grid container justify="flex-end">
                             <Grid item>
-                                <Link href="/login" variant="body2">
-                                    Don't have an account? Sign up
+                                <Link href="/signup" variant="body2">
+                                    Create an Account
                                 </Link>
                             </Grid>
                         </Grid>

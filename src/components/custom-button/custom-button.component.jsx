@@ -2,19 +2,23 @@ import React from 'react'
 
 import './custom-button.styles.scss'
 
-const CustomButton = ({ children, primary, secondary, transparent, ...otherProps }) => {
+const CustomButton = ({ children, primary, secondary, transparent, googleSignIn, ...otherProps }) => {
     let listOfClasses = [];
 
-    if(primary){
+    if (primary){
         listOfClasses.push('primary')
     }
 
-    if(secondary){
+    if (secondary){
         listOfClasses.push('secondary')
     }
 
-    if(transparent){
+    if (transparent){
         listOfClasses.push('transparent')
+    }
+
+    if (googleSignIn){
+        listOfClasses.push('google-sign-in')
     }
 
     return (
