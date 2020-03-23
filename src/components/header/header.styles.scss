@@ -39,10 +39,10 @@
     }
 
     & .nav-links {
-        width: 40%;
+        width: 45%;
 
         @media (max-width: 900px) and (min-width: 800px){
-            width: 50%;
+            width: 55%;
         }
         
         & ul {
@@ -54,7 +54,7 @@
             transition: border-bottom 1600ms ease-in;
 
             & li {
-                padding: 0.3em 0.7em;
+                padding: 0.3em 0.5em;
                 cursor: pointer;
 
                 &:hover {
