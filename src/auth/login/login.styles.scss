@@ -20,7 +20,7 @@
 
         h1 {
             text-align: center;
-            margin-bottom: 2em;
+            margin-bottom: 1em;
             @media (min-width: 800px){
                 font-size: 1.5em;
             }
@@ -42,6 +42,17 @@
                 width: 90%;
                 display: flex;
                 justify-content: space-evenly;
+            }
+
+            a {
+                font-size: 0.8em;
+                align-self: flex-end;
+                color: blue;
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
             }
         }
     }

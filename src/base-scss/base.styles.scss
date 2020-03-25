@@ -54,6 +54,15 @@ $mod_2: 1.3; // desktop
     }
 }
 
+@mixin visuallyHidden {
+    position: absolute;
+    @include widthAndHeight(1px, 1px);
+    overflow: hidden;
+    clip: rect(1px 1px 1px 1px); /* Support for IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap;
+}
+
 h1 {  
   font-size: $mod_1*$mod_1*$mod_1*$mod_1 *1rem !important; 
   @include fluid-type($min_screen-width, $max_screen-width, $mod_1*$mod_1*$mod_1 *$min_font, $mod_2*$mod_2*$mod_2 *$min_font);

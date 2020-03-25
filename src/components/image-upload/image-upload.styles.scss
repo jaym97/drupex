@@ -1,0 +1,36 @@
+@use '../../base-scss/base.styles.scss' as base;
+
+.image-upload_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .profile-pic_wrapper {
+        position: relative;
+        height: 100px;
+        width: 100px;
+        background-color: base.$primary-color;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            z-index: 1;
+        }
+
+        svg {
+            position: absolute;
+            fill: base.$on-primary-color;
+            width: 4em;
+            top: auto;
+            bottom: auto;
+            left: auto;
+            right: auto;
+            z-index: 0;
+        }
+    }
+}

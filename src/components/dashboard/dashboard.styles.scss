@@ -16,6 +16,13 @@
             flex-direction: column;
             padding: 1em 0;
 
+            #profile-img {
+                &:hover {
+                    background-color: unset;
+                    cursor: default;
+                }
+            }
+
             & li {
                padding: 1em 2em;
                transition: background-color 300ms ease-out;
@@ -35,5 +42,9 @@
                }
             }
         }
+    }
+
+    .dashboard-content {
+        @include base.widthAndHeight(75%, 100%);
     }
 }

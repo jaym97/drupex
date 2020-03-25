@@ -1,6 +1,5 @@
 import React from 'react'
-import Grid from '@material-ui/core/Grid';
-import Link from '@material-ui/core/Link';
+import { Link } from 'react-router-dom';
 
 import CustomButton from '../../components/custom-button/custom-button.component'
 import FormInput from '../../components/form-input/form-input.component'
@@ -67,13 +66,7 @@ class LoginPage extends React.Component {
                             <CustomButton onClick={signInWithGoogle} googleSignIn>Sign in with Google</CustomButton>
                         </div>
 
-                        <Grid container justify="flex-end">
-                            <Grid item>
-                                <Link href="/signup" variant="body2">
-                                    Create an Account
-                                </Link>
-                            </Grid>
-                        </Grid>
+                        <Link to="/signup">Create an Account</Link>
                     </form>
                 </div>
             </div>
