@@ -23,7 +23,7 @@ class PrescriptionRequests extends Component {
         const imgPathContext = require.context('../../assets/hero-images/')
 
         return (
-        <div className="prescription-requests">
+        <div id="prescription-requests" className="prescription-requests">
             <Hero imageUrl={imgPathContext('./login-hero.jpg')} page="prescription-requests">
             <table className="minimalistBlack">
             <thead>

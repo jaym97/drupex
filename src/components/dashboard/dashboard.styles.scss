@@ -3,7 +3,7 @@
 .dashboard-wrapper {
     @include base.widthAndHeight(100%, 93vh);
     display: flex;
-    flex-wrap: wrap;
+    // flex-wrap: wrap;
 
     .dashboard-panel {
         @include base.widthAndHeight(25%, 100%);

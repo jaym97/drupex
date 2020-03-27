@@ -18,7 +18,6 @@ import LoginPage from './auth/login/login.auth'
 import PatientsPage from './pages/patients/patients.page'
 import PatientPrescriptions from './pages/patient-prescriptions/patient-prescriptions.page'
 import PrescriptionRequest from './pages/prescription-request/prescription-request.page'
-import PrescriptionRequests from './pages/prescription-requests/prescription-requests.page'
 import SignUpPage from './auth/sign-up/sign-up.auth'
 
 // Firebase method import
@@ -103,7 +102,6 @@ class App extends React.Component {
 
           <Route path="/doctors" render={() =>this.props.currentUser ? this.props.currentUser.role == 'patient' ? <Redirect to='/patients' />: (<DoctorsPage />) : (<LoginPage />)} />
           <Route path="/patients" render={() =>this.props.currentUser ? this.props.currentUser.role == 'doctor' ? <Redirect to='/doctors' />: (<PatientsPage />) : (<LoginPage />)} />
-          <Route path="/prescription-requests" component={PrescriptionRequests} />
           <Route path="/prescription-request" component={PrescriptionRequest} />
           <Route path="/patient-prescriptions" component={PatientPrescriptions} />
         </Switch>
