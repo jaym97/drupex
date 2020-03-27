@@ -17,6 +17,8 @@
             padding: 1em 0;
 
             #profile-img {
+                align-self: center;
+
                 &:hover {
                     background-color: unset;
                     cursor: default;
@@ -24,8 +26,11 @@
             }
 
             & li {
-               padding: 1em 2em;
-               transition: background-color 300ms ease-out;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 1em 2em;
+                transition: background-color 300ms ease-out;
                
                &:hover {
                    background-color: base.$on-primary-color;
@@ -34,11 +39,21 @@
                    a {
                        color: base.$primary-color;
                    }
+
+                   svg {
+                       fill: base.$primary-color;
+                   }
                }
 
                & a {
                    text-decoration: none;
                    color: base.$on-primary-color;
+                   width: 80%;
+               }
+
+               svg {
+                   width: 2rem;
+                   fill: base.$on-primary-color;
                }
             }
         }
@@ -46,5 +61,16 @@
 
     .dashboard-content {
         @include base.widthAndHeight(75%, 100%);
+    }
+}
+
+#unread {
+    fill: base.$complementary-color;
+    animation: pulse 1000ms infinite ease-out;
+}
+
+@keyframes pulse {
+    10% {
+        transform: scale(1.2);
     }
 }
