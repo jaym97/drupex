@@ -6,8 +6,8 @@
     // flex-wrap: wrap;
 
     .dashboard-panel {
-        @include base.widthAndHeight(25%, 100%);
-        min-width: 240px;
+        @include base.widthAndHeight(23%, 100%);
+        min-width: 200px;
         background-color: base.$primary-color;
 
         & ul {
@@ -29,7 +29,7 @@
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                padding: 1em 2em;
+                padding: 1em;
                 transition: background-color 300ms ease-out;
                
                &:hover {
@@ -60,7 +60,7 @@
     }
 
     .dashboard-content {
-        @include base.widthAndHeight(75%, 100%);
+        @include base.widthAndHeight(77%, 100%);
     }
 }
 

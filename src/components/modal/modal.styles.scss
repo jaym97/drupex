@@ -1,29 +1,18 @@
 .modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width:100%;
-    height: 100%;
-    background-color: rgba(black, 0.4);
-  
-  .modal-main {
-    position:fixed;
-    background: white;
-    width: 60%;
-    min-height: 20em;
-    top:50%;
-    left:50%;
-    border-radius: 3px;
-    transform: translate(-50%,-50%);
-
-
-  }
+  display: flex;
+  flex-direction: column;
+  position:fixed;
+  background: white;
+  width: 60%;
+  min-height: 20em;
+  top: 0;
+  left: 50%;
+  border-radius: 3px;
+  transform: translate(-50%, -100%);
+  transition: transform 300ms ease-out;
+  z-index: 100;
 }
 
 .visible-display {
-  display: block;
-}
-
-.display-none {
-  display: none;
+  transform: translate(-50%, 100%);
 }

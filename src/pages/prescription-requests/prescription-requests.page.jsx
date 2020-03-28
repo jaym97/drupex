@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 
+import Backdrop from '../../components/backdrop/backdrop.component'
 import CustomButton from '../../components/custom-button/custom-button.component';
 import Hero from '../../components/hero/hero.component'
 import Modal from '../../components/modal/modal.component'
@@ -41,6 +42,9 @@ class PrescriptionRequests extends Component {
                     <td>Covid-19</td>
                     <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam facere dolorem eius harum unde veniam aspernatur.</td>
                     <td>
+                        {
+                            this.state.modalIsOpen ? <Backdrop /> : ''
+                        }
                         <Modal isOpen={this.state.modalIsOpen} handleClose={this.hideModal}>
                             <p>Modal</p>
                             <p>Data</p>
