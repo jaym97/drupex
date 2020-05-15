@@ -41,24 +41,29 @@ class App extends React.Component {
      for firebase database changes when users get authenticated by signing in and out and creating
      new accounts. The onAuthStateChanged method combined with async ... await creates
      an observer that is always listening for these changes */
-  componentDidMount() {
-    const { setCurrentUser } = this.props;
+  	componentDidMount() {
+		const { setCurrentUser } = this.props;
+	
+		this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
+			
+			if (userAuth) {
+			const userRef = await createUserProfileDocument(userAuth);
+			
+	
+				if (userRef){
+					console.log(userRef, 2)
+					userRef.onSnapshot(snapShot => {
+						setCurrentUser({
+						id: snapShot.id,
+						...snapShot.data()
+						});
+					});
+				}
+    		}
   
-    this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
-      if (userAuth) {
-        const userRef = await createUserProfileDocument(userAuth);
-  
-        userRef.onSnapshot(snapShot => {
-          setCurrentUser({
-            id: snapShot.id,
-            ...snapShot.data()
-          });
-        });
-      }
-  
-      setCurrentUser(userAuth);
-    });
-  }
+      		setCurrentUser(userAuth);
+    	});
+	}
 
   toggleDrawer = () => {
     this.setState(({ drawerIsOpen }) => {
@@ -100,8 +105,8 @@ class App extends React.Component {
             render={() => this.props.currentUser ? (<Redirect to='/' />) : (<SignUpPage />)} 
           />
 
-          <Route path="/doctors" render={() =>this.props.currentUser ? this.props.currentUser.role == 'patient' ? <Redirect to='/patients' />: (<DoctorsPage />) : (<LoginPage />)} />
-          <Route path="/patients" render={() =>this.props.currentUser ? this.props.currentUser.role == 'doctor' ? <Redirect to='/doctors' />: (<PatientsPage />) : (<LoginPage />)} />
+          <Route path="/doctors" render={() =>this.props.currentUser ? this.props.currentUser.role === 'patient' ? <Redirect to='/patients' />: (<DoctorsPage />) : (<LoginPage />)} />
+          <Route path="/patients" render={() =>this.props.currentUser ? this.props.currentUser.role === 'doctor' ? <Redirect to='/doctors' />: (<PatientsPage />) : (<LoginPage />)} />
           <Route path="/prescription-request" component={PrescriptionRequest} />
           <Route path="/patient-prescriptions" component={PatientPrescriptions} />
         </Switch>

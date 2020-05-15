@@ -1,0 +1,163 @@
+@use '../../base-scss/base.styles.scss' as base;
+
+.signup-container {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 1em;
+    background-color: base.$primary-color;
+
+    @media (min-width: 768px){
+        padding: 2em 1em 1.5em;
+    }
+
+    .signup-form-container {
+        @include base.widthAndHeight(95%, 85vh);
+        display: grid;
+        place-items: center;
+        gap: 1em;
+        grid-template-rows: 1fr 0.75fr 8.25fr;
+        background-color: base.$on-primary-color;
+        box-shadow: 1px 1px 17px 5px rgba(black, 0.5);
+        border-radius: 5px;
+
+        @media (min-width: 800px){
+            width: 55%;
+        }
+
+        @media (min-width: 1000px){
+            width: 50%;
+        }
+
+        .icon-wrapper {
+            @include base.widthAndHeight(3rem, 3rem);
+            display: grid;
+            place-items: center;
+            border: 2.5px solid darken(base.$complementary-color, 15%);
+            border-radius: 50%;
+            background-color: base.$complementary-color;
+    
+            #signup-icon {
+                width: 2rem;
+                fill:  base.$on-primary-color;
+            }
+        }
+
+        #signup-title {
+            font-weight: 400;
+            font-size: 1.5em;
+            text-align: center;
+        }
+
+        #signup-form {
+            @include base.widthAndHeight(100%, 100%);
+            padding: 0.5em 1.5em;
+            display: grid;
+            grid-template-rows: repeat(5, 1fr) 2fr;
+            gap: 0.5em;
+            place-items: center;
+
+            .group {
+                display: flex;
+                width: 100%;
+                justify-content: space-between;
+
+                .form-group {
+                    width: 47.5%;
+                }
+            }
+
+            .form-group {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.radio-group {
+	display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 80%;
+    
+    @media (max-width: 530px){
+        width: 95%;
+    }
+
+    @media (max-width: 425px){
+        width: 100%;
+    }
+}
+
+.radio-container {
+	position: relative;
+    height: 40px;
+    border: none;
+}
+
+.radio-container input[type="radio"] {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+    clip: rect(1px 1px 1px 1px); /* Support for IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap;
+}
+
+.radio-container input[type="radio"] + label {
+	display: flex;
+	align-items: center;
+	position: relative;
+    cursor: pointer;
+    transform: translateY(25%);
+
+    @media (max-width: 530px){
+        margin-right: 5px;
+    }
+    
+}
+
+.radio-container input[type="radio"] + label::before {
+	content: '';
+	position: relative;
+	display: inline-block;
+	margin-right: 10px;
+	width: 20px;
+	height: 20px;
+	background: white;
+	border: 3px solid  base.$complementary-color;
+    border-radius: 50%;
+    
+    @media (max-width: 530px){
+        margin-right: 5px;
+    }
+}
+
+.radio-container input[type="radio"]:checked + label::before {
+	background: #fff;
+}
+
+.radio-container input[type="radio"]:checked + label::after {
+	content: '';
+	position: absolute;
+	top: 7px;
+	left: 7px;
+	height: 12px;
+	width: 12px;
+	background-color: base.$complementary-color;
+	border-radius: 50%;
+}
+
+#control-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+
+    .custom-button {
+        padding: 1em 2em;
+        height: unset;
+    }
+}

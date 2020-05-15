@@ -28,13 +28,13 @@ const Footer = () => (
 
         <div className="other-links">
             <div className="social-links">
-                <a href="https://www.facebook.com/" target="_blank">
+                <a rel="noopener noreferrer" href="https://www.facebook.com/" target="_blank">
                     <FacebookIcon id="click here to go to our (non-existent :D) facebook page" />
                 </a>
-                <a href="https://www.linkedin.com/in/jason-omemu" target="_blank">
+                <a rel="noopener noreferrer" href="https://www.linkedin.com/in/jason-omemu" target="_blank">
                     <LinkedInIcon id="click here to reach out on LinkedIn" />
                 </a>
-                <a href="https://www.linkedin.com/in/jason-omemu" target="_blank">
+                <a rel="noopener noreferrer" href="https://www.linkedin.com/in/jason-omemu" target="_blank">
                     <TwitterIcon id="click here to reach out on Twitter" />
                 </a>
             </div>

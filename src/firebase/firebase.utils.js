@@ -1,6 +1,6 @@
-import firebase from 'firebase/app';
-import 'firebase/auth';
-import 'firebase/firestore';
+import firebase from 'firebase/app'
+import 'firebase/auth'
+import 'firebase/firestore'
 
 const firebaseConfig = {
     apiKey: "AIzaSyAW-tSYu7LxENsysnHETubjj_p3J2BlyBw",
@@ -14,41 +14,68 @@ const firebaseConfig = {
 };
 
 export const createUserProfileDocument = async (userAuth, additionalData) => {
-    if (!userAuth) return;
+    if (!userAuth) return
 
-    const userRef = firestore.doc(`users/${userAuth.uid}`);
+    const patientRef = firestore.doc(`patients/${userAuth.uid}`),
+          doctorRef = firestore.doc(`/doctors/${userAuth.uid}`),
+          patientSnapshot = await patientRef.get(),
+          doctorSnapshot = await doctorRef.get();
 
-    const userSnapshot = await userRef.get();
-
-    if (!userSnapshot.exists){
-        const { firstname, lastname, username, email, role } = userAuth;
-        const createdAt = new Date();
+    if (!patientSnapshot.exists && !doctorSnapshot.exists && additionalData){
+        const { role } = additionalData,
+              { email } = userAuth,
+              createdAt = new Date();
 
         try {
-            await userRef.set({
-                firstname,
-                lastname,
-                username, 
-                email,
-                createdAt,
-                role,
-                ...additionalData
-            })
+            if (role === 'patient'){
+                await patientRef.set({ 
+                    email,
+                    createdAt,
+                    ...additionalData
+                })
+            } else if (role === 'doctor'){
+                await doctorRef.set({
+                    email,
+                    createdAt,
+                    ...additionalData
+                })
+            }
             
         } catch (error){
             console.log('error creating user', error.message)
         }
     }
 
-    return userRef
+    if (userAuth.role === 'patient')
+        return patientRef
+
+    if (userAuth.role === 'doctor')
+        return doctorRef
 }
 
-firebase.initializeApp(firebaseConfig);
+export const updatePrescriptionRequestList = async (userAuth, data) => {
+    if (!userAuth) return
 
-export const auth = firebase.auth();
-export const firestore = firebase.firestore();
+    const userRef = await firestore.doc(`patients/${userAuth.uid}`),
+          userSnapshot = await userRef.get();
 
-const provider = new firebase.auth.GoogleAuthProvider();
-provider.setCustomParameters({ prompt: 'select_account' });
+    if (userSnapshot.exists){
+       try {
+            await firestore.collection('patients').doc(`${userAuth.uid}`).collection('requests').add(data)
+            return true
+       } catch (error){
+            console.log('error updating user', error.message)
+            return false
+        }
+    }
+}
 
-export const signInWithGoogle = () => auth.signInWithPopup(provider);
+firebase.initializeApp(firebaseConfig)
+
+export const auth = firebase.auth()
+export const firestore = firebase.firestore()
+
+const provider = new firebase.auth.GoogleAuthProvider()
+provider.setCustomParameters({ prompt: 'select_account' })
+
+export const signInWithGoogle = () => auth.signInWithPopup(provider)

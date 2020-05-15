@@ -34,7 +34,7 @@ const HomePage = ({ currentUser }) => (
             </div>
 
             <div className="hero-controls">
-                <CustomButton primary><Link to={currentUser ? currentUser.role == 'patient' ? '/patients' : '/doctors' : '/login'}>Get Started</Link></CustomButton>
+                <CustomButton primary><Link to={currentUser ? currentUser.role === 'patient' ? '/patients' : '/doctors' : '/login'}>Get Started</Link></CustomButton>
                 <CustomButton transparent><Link to="/signup">Sign Up</Link></CustomButton>
             </div>
         </Hero>

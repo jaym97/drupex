@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link, Switch, Route } from 'react-router-dom'
 
-import DashboardChart from '../dashboard-chart/dashboard-chart.component'
+// import DashboardChart from '../dashboard-chart/dashboard-chart.component'
 import ImageUpload from '../image-upload/image-upload.component'
 
 import PrescriptionRequests from '../../pages/prescription-requests/prescription-requests.page'

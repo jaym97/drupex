@@ -7,4 +7,4 @@ const HomeIcon = ({ id }) => (
     </svg>
 )
 
-export default HomeIcon;
+export default HomeIcon

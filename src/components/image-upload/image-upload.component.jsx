@@ -38,7 +38,7 @@ const ImageUpload = () => {
 
             <div className="profile-pic_wrapper" onClick={() => imageUploader.current.click()}>
                 <UserIcon />
-                <img ref={uploadedImage} />
+                <img ref={uploadedImage} alt="User avatar" />
                 <span className="visually-hidden">Click to update your profile picture</span>
             </div>
         </div>
